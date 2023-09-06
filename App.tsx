@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -26,13 +26,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import LinearGradient from 'react-native-linear-gradient';
-
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
+import LinearGradPage from './src/components/LinearGradPage';
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -42,17 +36,12 @@ function App(): JSX.Element {
 
   return (
     <>
-    <LinearGradient
-    colors={['#f5f5f5', '#ecf0c6']}
-    start={{ x: 0.0, y: 0.0 }}
-    end={{ x: 1.0, y: 1.0 }}
-    style={styles.gradient}
-  >
-   <Text style ={styles.sectionContainer} >
-    hi komal
-   </Text>
-   </LinearGradient>
-   </>
+      <LinearGradPage>
+        <Text style={styles.sectionContainer} >
+          hi komal
+        </Text>
+      </LinearGradPage>
+    </>
   );
 }
 
@@ -60,12 +49,9 @@ const styles = StyleSheet.create({
   sectionContainer: {
     paddingHorizontal: 24,
     height: Dimensions.get('window').height,
-    width:Dimensions.get('window').width,
-    alignContent:'center',
-  },
-  gradient: {
-    flex: 1,
-  },
+    width: Dimensions.get('window').width,
+    alignContent: 'center',
+  }
 });
 
 export default App;
