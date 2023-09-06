@@ -15,7 +15,8 @@ import {
   Text,
   useColorScheme,
   View,
-  Dimensions
+  Dimensions,
+  ImageBackground
 } from 'react-native';
 
 import {
@@ -25,6 +26,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import LinearGradient from 'react-native-linear-gradient';
+
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -38,21 +41,30 @@ function App(): JSX.Element {
   };
 
   return (
+    <>
+    <LinearGradient
+    colors={['#f5f5f5', '#ecf0c6']}
+    start={{ x: 0.0, y: 0.0 }}
+    end={{ x: 1.0, y: 1.0 }}
+    style={styles.gradient}
+  >
    <Text style ={styles.sectionContainer} >
     hi komal
    </Text>
+   </LinearGradient>
+   </>
   );
 }
 
 const styles = StyleSheet.create({
   sectionContainer: {
-    //marginTop: 32,
     paddingHorizontal: 24,
     height: Dimensions.get('window').height,
     width:Dimensions.get('window').width,
-    //alignItems:'center',
     alignContent:'center',
-    backgroundColor: "#ecf0c6",
+  },
+  gradient: {
+    flex: 1,
   },
 });
 
